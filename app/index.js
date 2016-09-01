@@ -1,0 +1,1 @@
+document.getElementById('content').innerHTML = '<h1>Hello React Play</h1>';

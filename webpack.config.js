@@ -3,10 +3,10 @@ var path = require('path');
 
 module.exports = {
     entry: [
-        './app/index.js'
+        './app/index.jsx'
     ],
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'app'),
         filename: 'budle.js'
     },
     module: {

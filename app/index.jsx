@@ -1,10 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import reactCSS from 'reactcss';
 
 var TitleComponent = React.createClass({
     render : function() {
+        const styles = reactCSS({
+            'default': {
+                title: {
+                    fontSize: '28px',
+                    color: 'blue'
+                },
+
+             },
+        });
+    
         return (
-            <h1>React Play Application</h1>
+            <h1 style={ styles.title}>React Play Application</h1>
         );
     }
 })

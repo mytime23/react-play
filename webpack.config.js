@@ -6,7 +6,7 @@ module.exports = {
         './app/index.jsx'
     ],
     output: {
-        path: path.resolve(__dirname, 'app'),
+        path: path.resolve(__dirname, 'app/build'),
         filename: 'budle.js'
     },
     module: {

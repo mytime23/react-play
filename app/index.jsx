@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import reactCSS from 'reactcss';
+import reactCSS, { hover } from 'reactcss';
 
+/* TitleComponent */
 var TitleComponent = React.createClass({
     render : function() {
         const styles = reactCSS({
@@ -20,6 +21,7 @@ var TitleComponent = React.createClass({
     }
 })
 
+/* NavComponent */
 var NavComponent = React.createClass({
     render : function() {
         return (
@@ -35,12 +37,78 @@ var NavComponent = React.createClass({
     }
 })
 
+/* ButtonComponent */
+var ButtonComponent = React.createClass({
+    render : function() {
+        const styles = reactCSS({
+            'default': {
+                button_A: {
+                    width: '80px',
+                    height: '30px'
+                },
+                button_B: {
+                    width: '80px',
+                    height: '30px',
+                    border: '1px blue solid'
+                },
+                button_C: {
+                    width: '80px',
+                    height: '60px',
+                    color: '#fff',
+                    background: '#6699ff',
+                    border: '1px red solid'
+                },
+                button_D: {
+                    width: '80px',
+                    height: '30px',
+                    color: '#fff',
+                    background: 'red',
+                    border: '1px blue solid'
+                },
+            },
+        });
+        return (
+            <div className="ButtonComponent">
+                <input type="button" style={ styles.button_A} value="Button A" />
+                <input type="button" style={ styles.button_B} value="Button B" />
+                <input type="button" style={ styles.button_C} value="Button C" />
+                <input type="button" style={ styles.button_D} value="Button D" />
+            </div>
+        );
+    }
+})
+
+/* TableComponent */
+var TableComponent = React.createClass({
+    render : function() {
+        const styles = reactCSS({
+            'default': {
+                table: {
+                    width: '100px',
+                    height: '50px',
+                    border: '1px green solid',
+                },
+            }   
+         });         
+        return (
+            <div className="TableComponent">
+                <div style={ styles.table}>Table 1</div>
+                <div style={ styles.table}>Table 2</div>
+                <div style={ styles.table}>Table 3</div>
+                <div style={ styles.table}>Table 4</div>
+            </div>    
+        );
+    }
+})
+
 var AppComponent = React.createClass({
     render : function() {
         return (
             <div className="AppComponent">
                 <TitleComponent />
                 <NavComponent />
+                <ButtonComponent />
+                <TableComponent />
             </div>    
         );
     }
@@ -50,3 +118,4 @@ ReactDOM.render(
     <AppComponent />,
     document.getElementById('content')
 );
+

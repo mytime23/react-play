@@ -49,30 +49,33 @@ var ButtonComponent = React.createClass({
                 button_B: {
                     width: '80px',
                     height: '30px',
-                    border: '1px blue solid'
+                    border: '1px blue solid',
+                    'border-radius' : '5px'
                 },
                 button_C: {
                     width: '80px',
-                    height: '60px',
+                    height: '30px',
                     color: '#fff',
-                    background: '#6699ff',
-                    border: '1px red solid'
+                    background: '#336699',
+                    border: '1px red solid',
+                    'border-radius' : '5px'
                 },
                 button_D: {
                     width: '80px',
                     height: '30px',
                     color: '#fff',
                     background: 'red',
-                    border: '1px blue solid'
+                    border: '1px blue solid',
+                    'border-radius' : '7px'
                 },
             },
         });
         return (
             <div className="ButtonComponent">
-                <input type="button" style={ styles.button_A} value="Button A" />
-                <input type="button" style={ styles.button_B} value="Button B" />
-                <input type="button" style={ styles.button_C} value="Button C" />
-                <input type="button" style={ styles.button_D} value="Button D" />
+                <input type="button" style={ styles.button_A} value="Button A" />&nbsp;
+                <input type="button" style={ styles.button_B} value="Button B" />&nbsp;
+                <input type="button" style={ styles.button_C} value="Button C" />&nbsp;
+                <input type="button" style={ styles.button_D} value="Button D" />&nbsp;
             </div>
         );
     }

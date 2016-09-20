@@ -16,21 +16,38 @@ var TitleComponent = React.createClass({
         });
     
         return (
-            <h1 style={ styles.title}>React Play Application</h1>
+            <h1 style={styles.title}>React Play Application</h1>
         );
     }
 })
+
+var ulStyle = {
+                    color : 'white',
+                    background : '#333',
+                    margin : 0,
+                    padding : 0,
+                    float : 'left',
+                    'list-style' : 'none',
+};
+
+var liStyle = {
+                    height : 35,
+                    float: 'left',
+                    'line-height' : 35,
+                    'margin-left' : '20',
+                    'margin-right' : '10'
+}
 
 /* NavComponent */
 var NavComponent = React.createClass({
     render : function() {
         return (
             <div className="nav">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Docs</li>
-                    <li>Support</li>
+                <ul style={ulStyle}>
+                    <li style={liStyle}>Home</li>
+                    <li style={liStyle}>About</li>
+                    <li style={liStyle}>Docs</li>
+                    <li style={liStyle}>Support</li>
                 </ul>
             </div>
         );
@@ -114,8 +131,9 @@ var AppComponent = React.createClass({
             <div className="AppComponent">
                 <TitleComponent />
                 <NavComponent />
+                <br /><br /><br /><br />
                 <ButtonComponent />
-                <br />
+                <br /><br />
                 <TableComponent />
             </div>    
         );

@@ -44,29 +44,33 @@ var ButtonComponent = React.createClass({
             'default': {
                 button_A: {
                     width: '80px',
-                    height: '30px'
+                    height: '30px',
+                    background: '#FFAA66',
+                    border: '1px #996633 solid',
+                    'border-radius' : '5px'
                 },
                 button_B: {
                     width: '80px',
                     height: '30px',
-                    border: '1px blue solid',
+                    background: '#BBCC66',
+                    border: '1px #999955 solid',
                     'border-radius' : '5px'
                 },
                 button_C: {
                     width: '80px',
                     height: '30px',
-                    color: '#fff',
-                    background: '#336699',
-                    border: '1px red solid',
+                    color: '#222',
+                    background: '#66BBFF',
+                    border: '1px #3377AA solid',
                     'border-radius' : '5px'
                 },
                 button_D: {
                     width: '80px',
                     height: '30px',
-                    color: '#fff',
-                    background: 'red',
-                    border: '1px blue solid',
-                    'border-radius' : '7px'
+                    color: '#222',
+                    background: '#AAA',
+                    border: '1px #333 solid',
+                    'border-radius' : '5px'
                 },
             },
         });
@@ -111,6 +115,7 @@ var AppComponent = React.createClass({
                 <TitleComponent />
                 <NavComponent />
                 <ButtonComponent />
+                <br />
                 <TableComponent />
             </div>    
         );

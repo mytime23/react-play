@@ -41,18 +41,25 @@ var liStyle = {
 /* NavComponent */
 var NavComponent = React.createClass({
     render : function() {
+        var navList = this.props.data.map(function(nav) {
+            return <li style={liStyle}>{nav.id}.{nav.title}</li>
+        });
         return (
             <div className="nav">
                 <ul style={ulStyle}>
-                    <li style={liStyle}>Home</li>
-                    <li style={liStyle}>About</li>
-                    <li style={liStyle}>Docs</li>
-                    <li style={liStyle}>Support</li>
-                </ul>
+                    {navList}
+               </ul>
             </div>
         );
     }
 })
+
+var navData = [
+    {id:1, title : 'Home'},
+    {id:2, title : 'About'},
+    {id:3, title : 'Docs'},
+    {id:4, title : 'Support'}
+];
 
 /* ButtonComponent */
 var ButtonComponent = React.createClass({
@@ -102,6 +109,13 @@ var ButtonComponent = React.createClass({
     }
 })
 
+var tableData = [
+    {id:1, text : 'Table 1'},
+    {id:2, text : 'Table 2'},
+    {id:3, text : 'Table 3'},
+    {id:4, text : 'Table 4'}
+];
+
 /* TableComponent */
 var TableComponent = React.createClass({
     render : function() {
@@ -113,13 +127,18 @@ var TableComponent = React.createClass({
                     border: '1px green solid',
                 },
             }   
-         });         
+         });
+        var tableList = this.props.data.map(function(tab) {
+            return <div style={styles.table}>{tab.id}.{tab.text}</div>
+        });         
         return (
             <div className="TableComponent">
-                <div style={ styles.table}>Table 1</div>
-                <div style={ styles.table}>Table 2</div>
-                <div style={ styles.table}>Table 3</div>
-                <div style={ styles.table}>Table 4</div>
+                {tableList}
+                <div style={ styles.table}>Table 5</div>
+                <div style={ styles.table}>Table 6</div>
+                <div style={ styles.table}>Table 7</div>
+                <div style={ styles.table}>Table 8</div>
+
             </div>    
         );
     }
@@ -130,18 +149,18 @@ var AppComponent = React.createClass({
         return (
             <div className="AppComponent">
                 <TitleComponent />
-                <NavComponent />
+                <NavComponent data={this.props.navData} />
                 <br /><br /><br /><br />
                 <ButtonComponent />
                 <br /><br />
-                <TableComponent />
+                <TableComponent data={this.props.tableData} />
             </div>    
         );
     }
 });
 
 ReactDOM.render(
-    <AppComponent />,
+    <AppComponent navData={navData} tableData={tableData} />,
     document.getElementById('content')
 );
 
